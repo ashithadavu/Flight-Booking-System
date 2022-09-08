@@ -19,6 +19,7 @@ public class PaymentConfig {
     @Value("${paypal.client.secret}")
     private String clientSecret;
 
+    //EIzMyIJhdtG6ldlYkln9EQPfwj2lHUml7FFON020yCirA2Mdl3U9O8CiQg275Hlq4yBwYuPrDB8VSo-j
     @Value("${paypal.mode}")
     private String mode;
 
