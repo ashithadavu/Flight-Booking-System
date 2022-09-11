@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -15,7 +17,7 @@ public class UsersData {
     public static final String SEQUENCE_NAME="user-sequence";
 
     @Id
-    private int userId;
+    private int id;
     private String name;
     private String phNo;
 
@@ -26,12 +28,16 @@ public class UsersData {
     @Size(min=4, message = "Password must be 4 characters long")
     private String password;
 
-	public int getUserId() {
-		return userId;
+	
+
+	
+
+	public int getId() {
+		return id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

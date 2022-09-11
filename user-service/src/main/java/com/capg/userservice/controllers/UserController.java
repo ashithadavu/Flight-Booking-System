@@ -32,7 +32,7 @@ public class UserController {
 
     @PostMapping("/save")
     public ResponseEntity<UsersData> saveUserData(@RequestBody UsersData userData)  {
-        userData.setUserId((sequenceGeneratorService.getSequenceNumber(UsersData.SEQUENCE_NAME)));
+        userData.setId((sequenceGeneratorService.getSequenceNumber(UsersData.SEQUENCE_NAME)));
         UsersData savedUserData = userDataService.saveUserData(userData);
         return ResponseEntity.ok(savedUserData);
     }
@@ -47,7 +47,7 @@ public class UserController {
 
 
    @GetMapping("/username/{email}")
-    public ResponseEntity<UsersData> getDoctorsDataByEmail(@PathVariable("email") String email) throws ResourceNotFoundException {
+    public ResponseEntity<UsersData> getUserDataByEmail(@PathVariable("email") String email) throws ResourceNotFoundException {
 
         Optional<UsersData> userData = userDataService.getUserDataByEmail(email);
         if (userData.isEmpty()) {

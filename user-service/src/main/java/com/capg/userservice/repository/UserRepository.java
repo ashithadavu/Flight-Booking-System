@@ -14,5 +14,4 @@ public interface UserRepository extends MongoRepository<UsersData,Integer> {
 	@Query("{email:'?0'}")
    Optional<UsersData> getUserDataByEmail(String email);
 
-
 }

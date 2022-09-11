@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.capg.userservice.entity.DbSequence;
 
+import java.math.BigInteger;
 import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
