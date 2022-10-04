@@ -7,7 +7,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 @Document("flightbooking")
 public class FlightBooking {
-@Id	//unique key
+	
+private String flightId;
+@Id //unique key
 private String id;
 private String firstName;
 private String lastName;
@@ -79,6 +81,12 @@ public LocalDateTime getUpdatedTime() {
 }
 public void setUpdatedTime(LocalDateTime updatedTime) {
 	this.updatedTime = updatedTime;
+}
+public String getFlightId() {
+	return flightId;
+}
+public void setFlightId(String flightId) {
+	this.flightId = flightId;
 }
 
 }

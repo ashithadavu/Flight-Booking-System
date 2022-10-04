@@ -22,48 +22,51 @@ public class FlightServiceImpl implements FlightService{
 	
 	@Override
 	public List<FlightDTO> getFlightDetails(SearchRequest request) {
-		// TODO Auto-generated method stub
-		List<FlightInfo> flightDetails=flightRepository.findFlight(request.getDate(),request.getSource(),request.getDestination());
+		
+		  // TODO Auto-generated method stub List<FlightInfo>
+		System.out.println(request.getSource());
+		System.out.println(request.getDestination());
+		List<FlightInfo> flightDetails=flightRepository.findFlight(request.getSource(),request.getDestination());
 		List<FlightDTO> flightDto=transformer.transform(flightDetails);
+		 
 		return flightDto;
 	}
 	
 	@Override
 	public List<FlightDTO> getFlightByName(String name) {
-		// TODO Auto-generated method stub
-		List<FlightInfo> flightDetails=flightRepository.findFlightByName(name);
-		List<FlightDTO> flightDto=transformer.transform(flightDetails);
-		return flightDto;
+		/*
+		 * // TODO Auto-generated method stub List<FlightInfo>
+		 * flightDetails=flightRepository.findFlightByName(name); List<FlightDTO>
+		 * flightDto=transformer.transform(flightDetails);
+		 */
+		return null;
 	}
 
 	@Override
 	public FlightDTO newFlight(FlightDTO flightDTO) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<FlightDTO> getFlights() {
-		// TODO Auto-generated method stub
-		return null;
+		List<FlightInfo> flights = flightRepository.findAll();
+		List<FlightDTO> flightDto=transformer.transform(flights);
+		return flightDto;
 	}
 
 	@Override
 	public FlightDTO updateFlight(Integer id, FlightDTO flightDTO) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void deleteFlight(Integer id) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-		
+		flightRepository.deleteAll();
 	}
 
 	@Override

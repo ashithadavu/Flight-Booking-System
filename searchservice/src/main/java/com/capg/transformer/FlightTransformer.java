@@ -18,9 +18,10 @@ public class FlightTransformer {
 		dto.setArrival(flightInfo.getArrival());
 		dto.setDeparture(flightInfo.getDeparture());
 		dto.setDestination(flightInfo.getDestination());
-		dto.setSource(flightInfo.getSource());
+		dto.setOrigin(flightInfo.getSource());
 		dto.setName(flightInfo.getName());
 		dto.setPrice(flightInfo.getPrice());
+		dto.setFlightId(flightInfo.getId());
 		dto.setAvailableSeats(flightInfo.getAvailableSeats());
 		return dto;
 		

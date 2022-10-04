@@ -6,37 +6,35 @@ public class FlightDTO {
 	private String departure;
 	private String arrival;
 	private int price;
-	private String source;
+	private String origin;
 	private String destination;
 	private String date;
+	private String flightId;
 	private int availableSeats;
 	
-	public int getAvailableSeats() {
-		return availableSeats;
-	}
-
-	public void setAvailableSeats(int availableSeats) {
-		this.availableSeats = availableSeats;
-	}
 
 	public FlightDTO() {
 		
 	}
 	
 	
-	public FlightDTO(String name, int duration, String departure, String arrival, int price, String source,
-			String destination, String date, int availableSeats) {
+
+	public FlightDTO(String name, int duration, String departure, String arrival, int price, String origin,
+			String destination, String date, String flightId, int availableSeats) {
 		super();
 		this.name = name;
 		this.duration = duration;
 		this.departure = departure;
 		this.arrival = arrival;
 		this.price = price;
-		this.source = source;
+		this.origin = origin;
 		this.destination = destination;
 		this.date = date;
+		this.flightId = flightId;
 		this.availableSeats = availableSeats;
 	}
+
+
 
 	public String getName() {
 		return name;
@@ -68,12 +66,7 @@ public class FlightDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getSource() {
-		return source;
-	}
-	public void setSource(String source) {
-		this.source = source;
-	}
+	
 	public String getDestination() {
 		return destination;
 	}
@@ -86,6 +79,37 @@ public class FlightDTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+
+	public String getOrigin() {
+		return origin;
+	}
+
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(String flightId) {
+		this.flightId = flightId;
+	}
+
+
+
+	public int getAvailableSeats() {
+		return availableSeats;
+	}
+
+
+
+	public void setAvailableSeats(int availableSeats) {
+		this.availableSeats = availableSeats;
+	}
+
 	
 
 }

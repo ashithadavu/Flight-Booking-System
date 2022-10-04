@@ -23,6 +23,8 @@ public class FlightBookingTransformer {
 		dto.setFlightInfo(flightbooking.getFlightInfo());
 		dto.setCreatedTime(flightbooking.getCreatedTime());
 		dto.setUpdatedTime(flightbooking.getUpdatedTime());
+		dto.setId(flightbooking.getId());
+		dto.setFlightId(flightbooking.getFlightId());
 		return dto;
 
 	}
@@ -47,6 +49,7 @@ public class FlightBookingTransformer {
 		flightbooking.setEmail(flightbookingdto.getEmail());
 		flightbooking.setPhoneNumber(flightbookingdto.getPhoneNumber());
 		flightbooking.setRequiredNumberOfSeats(flightbookingdto.getRequiredNumberOfSeats());
+		flightbooking.setFlightId(flightbookingdto.getFlightId());
 		flightbooking.setFlightInfo(flightbookingdto.getFlightInfo());
 		flightbooking.setCreatedTime(flightbookingdto.getCreatedTime());
 		flightbooking.setUpdatedTime(flightbookingdto.getUpdatedTime());
@@ -65,6 +68,7 @@ public class FlightBookingTransformer {
 		flightbooking.setFlightInfo(flightbookingdto.getFlightInfo());
 		flightbooking.setCreatedTime(flightbookingdto.getCreatedTime());
 		flightbooking.setUpdatedTime(flightbookingdto.getUpdatedTime());
+		flightbooking.setFlightId(flightbookingdto.getFlightId());
 		return flightbooking;
 
 	}

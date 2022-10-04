@@ -91,7 +91,7 @@ public void setDate(String date) {
 public int getAvailableSeats() {
 	return availableSeats;
 }
-public void setAvailableseats(int availableSeats) {
+public void setAvailableSeats(int availableSeats) {
 	this.availableSeats = availableSeats;
 }
 

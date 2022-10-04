@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.capg.dto.FlightBookingDTO;
 import com.capg.entity.FlightBooking;
+import com.capg.entity.FlightInfo;
 import com.capg.repository.FlightBookingRepository;
+import com.capg.repository.FlightRepository;
 import com.capg.transformer.FlightBookingTransformer;
 
 @Service
@@ -16,6 +18,9 @@ public class BookingServiceImpl implements BookingService {
 	
 	@Autowired
 	private FlightBookingRepository repository;
+	
+	@Autowired
+	private FlightRepository flightRepository;
 	
 	@Autowired
 	private FlightBookingTransformer transformer;
@@ -32,7 +37,15 @@ public class BookingServiceImpl implements BookingService {
 	public List<FlightBookingDTO> getBookingDetails() {
 		// TODO Auto-generated method stub
 		List<FlightBooking> bookingDetails= repository.findAll();
+		System.out.println(bookingDetails);
+		bookingDetails.forEach(detail -> {
+			Optional<FlightInfo> flightInfo = flightRepository.findById(detail.getFlightId());
+			if(flightInfo.isPresent()) {
+				detail.setFlightInfo(flightInfo.get());
+			}
+		});
 		List<FlightBookingDTO> dtos = transformer.transform(bookingDetails);
+		System.out.println(dtos);
 		return dtos;
 	}
 
@@ -41,6 +54,11 @@ public class BookingServiceImpl implements BookingService {
 		// TODO Auto-generated method stub
 		Optional<FlightBooking> bookingDetail= repository.findById(id);
 		if(bookingDetail.isPresent()) {
+			Optional<FlightInfo> flightInfo = flightRepository.findById(bookingDetail.get().getFlightId());
+			if(flightInfo.isPresent()) {
+				bookingDetail.get().setFlightInfo(flightInfo.get());
+			}
+			
 		  FlightBookingDTO bookingDTO=transformer.transform(bookingDetail.get());
 		  return bookingDTO;
 		}
